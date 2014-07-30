@@ -1,0 +1,28 @@
+{
+  "name": "sample",
+  "version": "0.0.1",
+  "description": "hi",
+  "main": "server.js",
+  "scripts": {
+    "test": "-",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ONeale/node.git"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "ON",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ONeale/node/issues"
+  },
+  "homepage": "https://github.com/ONeale/node",
+  "dependencies": {
+    "node-fs": "^0.1.7",
+    "node-http": "0.0.5",
+    "twit": "^1.1.15"
+  }
+}
