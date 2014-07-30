@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<body>
+<center>
+  <h2>Latest from twitter</h2>
+  <div id='tweets'></div>
+</center>
+
+
+    
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script>
+  $.ajax({
+    url: "http://localhost:8080",
+    dataType: "json",
+
+    success: function(data) {
+      $.each(data.statuses, function () {
+        $( "#tweets" )
+        .append($('img', {
+          src: this['<img>'],
+          style: "padding-top:10px"
+        }));
+      });
+    }
+  });
+</script>
+<body>
