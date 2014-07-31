@@ -1,21 +1,11 @@
 <!DOCTYPE html>
-<head>
-<style type="text/css">
-    .twitterCSS {
-      border: black dashed ;
-    }
-
-    h2 {
-      font-family: verdana;
-    }
-
-    
-</style>
+<html>
+<head></head>
 <body>
 <center>
   <h2>Latest from twitter</h2>
-  <hr></hr>
   <div id='tweets'></div>
+  <img>
 </center>
 
 
@@ -28,14 +18,17 @@
     dataType: "json",
 
     success: function(data) {
+   
       $.each(data.statuses, function () {
+           console.log(data.statuses);
         $( "#tweets" )
-        .append($('img', {
-          src: this['<img>'],
-          class: twitterCSS
+        .append($('<img>', {
+          src: this['img'],
+          style: "padding-top:10px"
         }));
       });
     }
   });
 </script>
-<body>
+</body>
+</html>
