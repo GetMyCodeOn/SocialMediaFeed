@@ -1,11 +1,23 @@
 <!DOCTYPE html>
-<html>
-<head></head>
+<head>
+<style type="text/css">
+    .twitterCSS {
+      border: black dashed ;
+    }
+
+    h2 {
+      font-family: verdana;
+      color: green;
+    }
+
+    body{
+      background-color: red;
+    }
+</style>
 <body>
 <center>
   <h2>Latest from twitter</h2>
   <div id='tweets'></div>
-  <img>
 </center>
 
 
@@ -14,21 +26,18 @@
 <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 <script>
   $.ajax({
-    url: "http://getmycodeyoutwit.herokuapp.com",
+    url: "http://localhost:8080",
     dataType: "json",
 
     success: function(data) {
-   
       $.each(data.statuses, function () {
-           console.log(data.statuses);
         $( "#tweets" )
-        .append($('<img>', {
-          src: this['img'],
-          style: "padding-top:10px"
+        .append($('img', {
+          src: this['<img>'],
+          class: twitterCSS
         }));
       });
     }
   });
 </script>
-</body>
-</html>
+<body>
